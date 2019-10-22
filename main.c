@@ -1,27 +1,12 @@
-#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
+#include <msp430.h> 
 
-setup()
+
+/**
+ * main.c
+ */
+int main(void)
 {
+	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
+	
+	return 0;
 }
-
-loop()
-{
-}
-
-fsm()
-{
-}
-
-
-
-void main(void) {
-
-  setup()
-  
-  while(1) {
-    
-	//loop
-	loop()
-	fsm()
-  }//end of while loop
-}//end of main
