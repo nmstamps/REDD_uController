@@ -4,7 +4,7 @@
 /**
  * main.c
  */
-
+// This is a comment to test
 #include <msp430.h>
 
 void main(void) {
