@@ -1,9 +1,9 @@
 ******************************************************************************
                   MSP430 Linker PC v18.12.3                    
 ******************************************************************************
->> Linked Wed Oct 30 02:56:10 2019
+>> Linked Wed Oct 30 05:13:08 2019
 
-OUTPUT FILE NAME:   <REDD_1.out>
+OUTPUT FILE NAME:   <REDD_temp.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs_mpu"  address: 00004400
 
 
@@ -79,7 +79,7 @@ MEMORY CONFIGURATION
   INT53                 0000fffa   00000002  00000002  00000000  RWIX
   INT54                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FRAM2                 00010000   00004000  0000005e  00003fa2  RWIX
+  FRAM2                 00010000   00004000  000000b4  00003f4c  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -221,20 +221,22 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.text      0    00010000    0000005e     
-                  00010000    0000002c     MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib : mpu_init.o (.text:__mpu_init)
-                  0001002c    00000028     blink.obj (.text:main)
-                  00010054    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
-                  0001005a    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+.text      0    00010000    000000b4     
+                  00010000    0000003c     main.obj (.text:main)
+                  0001003c    0000002c     MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib : mpu_init.o (.text:__mpu_init)
+                  00010068    0000002c     rts430x_lc_rd_eabi.lib : div16s.asm.obj (.text)
+                  00010094    00000016                            : div16u.asm.obj (.text)
+                  000100aa    00000006                            : exit.c.obj (.text:abort)
+                  000100b0    00000004                            : pre_init.c.obj (.text:_system_pre_init)
 
 MODULE SUMMARY
 
        Module             code   ro data   rw data
        ------             ----   -------   -------
     .\
-       blink.obj          40     0         0      
+       main.obj           60     0         0      
     +--+------------------+------+---------+---------+
-       Total:             40     0         0      
+       Total:             60     0         0      
                                                   
     C:\ti\ccs920\ccs\ccs_base\msp430\lib\FR59xx\MSPMPU_INIT_LIB_CCS_msp430_large_code_restricted_data.lib
        mpu_init.o         44     0         0      
@@ -242,7 +244,9 @@ MODULE SUMMARY
        Total:             44     0         0      
                                                   
     C:\ti\ccs920\ccs\tools\compiler\ti-cgt-msp430_18.12.3.LTS\lib\rts430x_lc_rd_eabi.lib
+       div16s.asm.obj     44     0         0      
        boot.c.obj         24     2         0      
+       div16u.asm.obj     22     0         0      
        isr_trap.asm.obj   8      0         0      
        exit.c.obj         6      0         0      
        pre_init.c.obj     4      0         0      
@@ -272,11 +276,11 @@ MODULE SUMMARY
        int53.asm.obj      0      2         0      
        int54.asm.obj      0      2         0      
     +--+------------------+------+---------+---------+
-       Total:             42     52        0      
+       Total:             108    52        0      
                                                   
        Stack:             0      0         160    
     +--+------------------+------+---------+---------+
-       Grand Total:       126    52        160    
+       Grand Total:       212    52        160    
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -540,7 +544,7 @@ address   name
 000009ce  AESAXIN_L                 
 000004be  BCD2BIN                   
 000004bc  BIN2BCD                   
-00010054  C$$EXIT                   
+000100aa  C$$EXIT                   
 0000043e  CAPTIO0CTL                
 0000043f  CAPTIO0CTL_H              
 0000043e  CAPTIO0CTL_L              
@@ -1096,17 +1100,21 @@ ffffffff  __TI_prof_data_size
 ffffffff  __TI_prof_data_start      
 ffffffff  __c_args__                
 00000001  __mpu_enable              
-00010000  __mpu_init                
+0001003c  __mpu_init                
+00010068  __mspabi_divi             
+00010094  __mspabi_divu             
+00010068  __mspabi_remi             
+00010094  __mspabi_remu             
 00004400  _c_int00_noinit_noargs_mpu
 0000fffe  _reset_vector             
 00002360  _stack                    
-0001005a  _system_pre_init          
-00010054  abort                     
+000100b0  _system_pre_init          
+000100aa  abort                     
 00004400  fram_ipe_end              
 00004400  fram_ipe_start            
 00004400  fram_rw_start             
 00004400  fram_rx_start             
-0001002c  main                      
+00010000  main                      
 0000a501  mpu_ctl0_value            
 00001513  mpu_sam_value             
 00000440  mpu_segment_border1       
@@ -1936,14 +1944,18 @@ address   name
 0000fffa  __TI_int53                
 0000fffc  __TI_int54                
 0000fffe  _reset_vector             
-00010000  __mpu_init                
-0001002c  main                      
-00010054  C$$EXIT                   
-00010054  abort                     
-0001005a  _system_pre_init          
+00010000  main                      
+0001003c  __mpu_init                
+00010068  __mspabi_divi             
+00010068  __mspabi_remi             
+00010094  __mspabi_divu             
+00010094  __mspabi_remu             
+000100aa  C$$EXIT                   
+000100aa  abort                     
+000100b0  _system_pre_init          
 ffffffff  __TI_pprof_out_hndl       
 ffffffff  __TI_prof_data_size       
 ffffffff  __TI_prof_data_start      
 ffffffff  __c_args__                
 
-[828 symbols]
+[832 symbols]
