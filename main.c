@@ -1,30 +1,34 @@
+//#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
 #include <msp430.h> 
+#include <MSP430FR5xx_6xx\driverlib.h>
 
 
-/**
- * main.c
- */
-// This is a comment to test
-#include <msp430.h>
+
+#define LED1 BIT0
+#define BUTTON BIT1
+#define PRESSED 0
+
 
 void main(void) {
-    WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
+
+    WDT_A_hold(WDT_A_BASE);              // Stop watchdog timer
+
+    unsigned char button_cur, button_prev;
+
+    //GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);
+
+
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
                                             // to activate previously configured port settings
-    P1DIR |= 0x01;                          // Set P1.0 to output direction
-    int j;
-    j=0;
-    for(;;) {
+    P1DIR |= LED1;                          // Set P1.0 to output direction
+    P1OUT|= LED1;
+
+    while(1){
         volatile unsigned int i;            // volatile to prevent optimization
-        if (j % 10 == 0) {
-            P1OUT ^= 0x01;                      // Toggle P1.0 using exclusive-OR
-        }
+        P1OUT ^= LED1;                      // Toggle P1.0 using exclusive-OR
 
-        i = 10000;                          // SW Delay
-        do i--;
-        while(i != 0);
-
-        j++;
+        __delay_cycles(1000000);
 
     }
+
 }
