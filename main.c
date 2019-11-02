@@ -16,7 +16,7 @@ void main(void) {
     unsigned char button_cur, button_prev;
 
     //GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);
-
+    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P1, GPIO_PIN1);
 
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
                                             // to activate previously configured port settings
@@ -25,9 +25,14 @@ void main(void) {
 
     while(1){
         volatile unsigned int i;            // volatile to prevent optimization
-        P1OUT ^= LED1;                      // Toggle P1.0 using exclusive-OR
+        button_cur = (P1IN & BUTTON);
+        if ((button_prev == PRESSED) &&
+                  (button_cur  != PRESSED) ){
 
-        __delay_cycles(1000000);
+
+            P1OUT ^= LED1; //toggle the LED
+          }
+        button_prev = button_cur;
 
     }
 
