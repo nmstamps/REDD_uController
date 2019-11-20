@@ -2,14 +2,13 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-SHELL = cmd.exe
-
-CG_TOOL_ROOT := C:/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS
+CG_TOOL_ROOT := /Applications/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./DAC.obj" \
 "./main.obj" \
 "./MSP430FR5xx_6xx/adc12_b.obj" \
 "./MSP430FR5xx_6xx/aes256.obj" \
@@ -54,8 +53,8 @@ $(GEN_CMDS__FLAG) \
 
 -include ../makefile.init
 
-RM := DEL /F
-RMDIR := RMDIR /S/Q
+RM := rm -rf
+RMDIR := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
@@ -179,22 +178,22 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 REDD_ucontroller.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --advice:hw_config=all --define=__MSP430FR5969__ --define=_MPU_ENABLE -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"REDD_ucontroller.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccs920/ccs/ccs_base/msp430/include" -i"C:/ti/ccs920/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccs920/ccs/ccs_base/msp430/lib/FR59xx" -i"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/lib" -i"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/include" --priority --reread_libs --define=_MPU_ENABLE --diag_wrap=off --display_error_number --warn_sections --xml_link_info="REDD_ucontroller_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "REDD_ucontroller.out" $(ORDERED_OBJS)
+	"/Applications/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --advice:hw_config=all --define=__MSP430FR5969__ --define=_MPU_ENABLE -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"REDD_ucontroller.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"/Applications/ti/ccs920/ccs/ccs_base/msp430/include" -i"/Applications/ti/ccs920/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"/Applications/ti/ccs920/ccs/ccs_base/msp430/lib/FR59xx" -i"/Applications/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/lib" -i"/Applications/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/include" --priority --reread_libs --define=_MPU_ENABLE --diag_wrap=off --display_error_number --warn_sections --xml_link_info="REDD_ucontroller_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "REDD_ucontroller.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 REDD_ucontroller.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: MSP430 Hex Utility'
-	"C:/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "REDD_ucontroller.hex" $(EXE_OUTPUTS__QUOTED)
+	"/Applications/ti/ccs920/ccs/tools/compiler/ti-cgt-msp430_18.12.3.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "REDD_ucontroller.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "MSP430FR5xx_6xx\adc12_b.obj" "MSP430FR5xx_6xx\aes256.obj" "MSP430FR5xx_6xx\comp_e.obj" "MSP430FR5xx_6xx\crc.obj" "MSP430FR5xx_6xx\crc32.obj" "MSP430FR5xx_6xx\cs.obj" "MSP430FR5xx_6xx\dma.obj" "MSP430FR5xx_6xx\esi.obj" "MSP430FR5xx_6xx\eusci_a_spi.obj" "MSP430FR5xx_6xx\eusci_a_uart.obj" "MSP430FR5xx_6xx\eusci_b_i2c.obj" "MSP430FR5xx_6xx\eusci_b_spi.obj" "MSP430FR5xx_6xx\framctl.obj" "MSP430FR5xx_6xx\framctl_a.obj" "MSP430FR5xx_6xx\gpio.obj" "MSP430FR5xx_6xx\hspll.obj" "MSP430FR5xx_6xx\lcd_c.obj" "MSP430FR5xx_6xx\mpu.obj" "MSP430FR5xx_6xx\mpy32.obj" "MSP430FR5xx_6xx\mtif.obj" "MSP430FR5xx_6xx\pmm.obj" "MSP430FR5xx_6xx\ram.obj" "MSP430FR5xx_6xx\ref_a.obj" "MSP430FR5xx_6xx\rtc_b.obj" "MSP430FR5xx_6xx\rtc_c.obj" "MSP430FR5xx_6xx\saph.obj" "MSP430FR5xx_6xx\saph_a.obj" "MSP430FR5xx_6xx\sdhs.obj" "MSP430FR5xx_6xx\sfr.obj" "MSP430FR5xx_6xx\sysctl.obj" "MSP430FR5xx_6xx\timer_a.obj" "MSP430FR5xx_6xx\timer_b.obj" "MSP430FR5xx_6xx\tlv.obj" "MSP430FR5xx_6xx\uups.obj" "MSP430FR5xx_6xx\wdt_a.obj" 
-	-$(RM) "main.d" "MSP430FR5xx_6xx\adc12_b.d" "MSP430FR5xx_6xx\aes256.d" "MSP430FR5xx_6xx\comp_e.d" "MSP430FR5xx_6xx\crc.d" "MSP430FR5xx_6xx\crc32.d" "MSP430FR5xx_6xx\cs.d" "MSP430FR5xx_6xx\dma.d" "MSP430FR5xx_6xx\esi.d" "MSP430FR5xx_6xx\eusci_a_spi.d" "MSP430FR5xx_6xx\eusci_a_uart.d" "MSP430FR5xx_6xx\eusci_b_i2c.d" "MSP430FR5xx_6xx\eusci_b_spi.d" "MSP430FR5xx_6xx\framctl.d" "MSP430FR5xx_6xx\framctl_a.d" "MSP430FR5xx_6xx\gpio.d" "MSP430FR5xx_6xx\hspll.d" "MSP430FR5xx_6xx\lcd_c.d" "MSP430FR5xx_6xx\mpu.d" "MSP430FR5xx_6xx\mpy32.d" "MSP430FR5xx_6xx\mtif.d" "MSP430FR5xx_6xx\pmm.d" "MSP430FR5xx_6xx\ram.d" "MSP430FR5xx_6xx\ref_a.d" "MSP430FR5xx_6xx\rtc_b.d" "MSP430FR5xx_6xx\rtc_c.d" "MSP430FR5xx_6xx\saph.d" "MSP430FR5xx_6xx\saph_a.d" "MSP430FR5xx_6xx\sdhs.d" "MSP430FR5xx_6xx\sfr.d" "MSP430FR5xx_6xx\sysctl.d" "MSP430FR5xx_6xx\timer_a.d" "MSP430FR5xx_6xx\timer_b.d" "MSP430FR5xx_6xx\tlv.d" "MSP430FR5xx_6xx\uups.d" "MSP430FR5xx_6xx\wdt_a.d" 
+	-$(RM) "DAC.obj" "main.obj" "MSP430FR5xx_6xx/adc12_b.obj" "MSP430FR5xx_6xx/aes256.obj" "MSP430FR5xx_6xx/comp_e.obj" "MSP430FR5xx_6xx/crc.obj" "MSP430FR5xx_6xx/crc32.obj" "MSP430FR5xx_6xx/cs.obj" "MSP430FR5xx_6xx/dma.obj" "MSP430FR5xx_6xx/esi.obj" "MSP430FR5xx_6xx/eusci_a_spi.obj" "MSP430FR5xx_6xx/eusci_a_uart.obj" "MSP430FR5xx_6xx/eusci_b_i2c.obj" "MSP430FR5xx_6xx/eusci_b_spi.obj" "MSP430FR5xx_6xx/framctl.obj" "MSP430FR5xx_6xx/framctl_a.obj" "MSP430FR5xx_6xx/gpio.obj" "MSP430FR5xx_6xx/hspll.obj" "MSP430FR5xx_6xx/lcd_c.obj" "MSP430FR5xx_6xx/mpu.obj" "MSP430FR5xx_6xx/mpy32.obj" "MSP430FR5xx_6xx/mtif.obj" "MSP430FR5xx_6xx/pmm.obj" "MSP430FR5xx_6xx/ram.obj" "MSP430FR5xx_6xx/ref_a.obj" "MSP430FR5xx_6xx/rtc_b.obj" "MSP430FR5xx_6xx/rtc_c.obj" "MSP430FR5xx_6xx/saph.obj" "MSP430FR5xx_6xx/saph_a.obj" "MSP430FR5xx_6xx/sdhs.obj" "MSP430FR5xx_6xx/sfr.obj" "MSP430FR5xx_6xx/sysctl.obj" "MSP430FR5xx_6xx/timer_a.obj" "MSP430FR5xx_6xx/timer_b.obj" "MSP430FR5xx_6xx/tlv.obj" "MSP430FR5xx_6xx/uups.obj" "MSP430FR5xx_6xx/wdt_a.obj" 
+	-$(RM) "DAC.d" "main.d" "MSP430FR5xx_6xx/adc12_b.d" "MSP430FR5xx_6xx/aes256.d" "MSP430FR5xx_6xx/comp_e.d" "MSP430FR5xx_6xx/crc.d" "MSP430FR5xx_6xx/crc32.d" "MSP430FR5xx_6xx/cs.d" "MSP430FR5xx_6xx/dma.d" "MSP430FR5xx_6xx/esi.d" "MSP430FR5xx_6xx/eusci_a_spi.d" "MSP430FR5xx_6xx/eusci_a_uart.d" "MSP430FR5xx_6xx/eusci_b_i2c.d" "MSP430FR5xx_6xx/eusci_b_spi.d" "MSP430FR5xx_6xx/framctl.d" "MSP430FR5xx_6xx/framctl_a.d" "MSP430FR5xx_6xx/gpio.d" "MSP430FR5xx_6xx/hspll.d" "MSP430FR5xx_6xx/lcd_c.d" "MSP430FR5xx_6xx/mpu.d" "MSP430FR5xx_6xx/mpy32.d" "MSP430FR5xx_6xx/mtif.d" "MSP430FR5xx_6xx/pmm.d" "MSP430FR5xx_6xx/ram.d" "MSP430FR5xx_6xx/ref_a.d" "MSP430FR5xx_6xx/rtc_b.d" "MSP430FR5xx_6xx/rtc_c.d" "MSP430FR5xx_6xx/saph.d" "MSP430FR5xx_6xx/saph_a.d" "MSP430FR5xx_6xx/sdhs.d" "MSP430FR5xx_6xx/sfr.d" "MSP430FR5xx_6xx/sysctl.d" "MSP430FR5xx_6xx/timer_a.d" "MSP430FR5xx_6xx/timer_b.d" "MSP430FR5xx_6xx/tlv.d" "MSP430FR5xx_6xx/uups.d" "MSP430FR5xx_6xx/wdt_a.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
