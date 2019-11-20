@@ -1,6 +1,6 @@
 //#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
-#include <msp430.h> 
-#include <MSP430FR5xx_6xx\driverlib.h>
+#include "msp430.h"
+#include "MSP430FR5xx_6xx/driverlib.h"
 
 //comment to push updates
 
