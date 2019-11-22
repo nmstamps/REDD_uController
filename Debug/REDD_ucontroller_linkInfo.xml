@@ -2,7 +2,7 @@
 <link_info>
    <banner>MSP430 Linker Unix v18.12.3.LTS</banner>
    <copyright>Copyright (c) 2003-2018 Texas Instruments Incorporated</copyright>
-   <link_time>0x5dd496f3</link_time>
+   <link_time>0x5dd74314</link_time>
    <link_errors>0x0</link_errors>
    <output_file>REDD_ucontroller.out</output_file>
    <entry_point>
@@ -886,7 +886,7 @@
          <size>0x18e</size>
          <input_file_ref idref="fl-26"/>
       </object_component>
-      <object_component id="oc-3d0">
+      <object_component id="oc-3ce">
          <name>.debug_info</name>
          <load_address>0x102d</load_address>
          <run_address>0x102d</run_address>
@@ -1011,7 +1011,7 @@
          <size>0x56</size>
          <input_file_ref idref="fl-26"/>
       </object_component>
-      <object_component id="oc-3ce">
+      <object_component id="oc-3d1">
          <name>.debug_line</name>
          <load_address>0x3be</load_address>
          <run_address>0x3be</run_address>
@@ -1346,7 +1346,7 @@
          <size>0x21</size>
          <input_file_ref idref="fl-26"/>
       </object_component>
-      <object_component id="oc-3d1">
+      <object_component id="oc-3d0">
          <name>.debug_pubnames</name>
          <load_address>0x9f</load_address>
          <run_address>0x9f</run_address>
@@ -2164,7 +2164,7 @@
             <object_component_ref idref="oc-4ae"/>
             <object_component_ref idref="oc-45d"/>
             <object_component_ref idref="oc-457"/>
-            <object_component_ref idref="oc-3d0"/>
+            <object_component_ref idref="oc-3ce"/>
             <object_component_ref idref="oc-3b2"/>
             <object_component_ref idref="oc-3f7"/>
             <object_component_ref idref="oc-441"/>
@@ -2190,7 +2190,7 @@
             <object_component_ref idref="oc-4ea"/>
             <object_component_ref idref="oc-460"/>
             <object_component_ref idref="oc-45a"/>
-            <object_component_ref idref="oc-3ce"/>
+            <object_component_ref idref="oc-3d1"/>
             <object_component_ref idref="oc-40f"/>
             <object_component_ref idref="oc-3fa"/>
             <object_component_ref idref="oc-444"/>
@@ -2278,7 +2278,7 @@
             <object_component_ref idref="oc-4af"/>
             <object_component_ref idref="oc-45f"/>
             <object_component_ref idref="oc-459"/>
-            <object_component_ref idref="oc-3d1"/>
+            <object_component_ref idref="oc-3d0"/>
             <object_component_ref idref="oc-3b3"/>
             <object_component_ref idref="oc-3f9"/>
             <object_component_ref idref="oc-443"/>
