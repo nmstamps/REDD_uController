@@ -1,6 +1,7 @@
-//#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
+//#include <ti/devices/msp432p4xx/driverlib/driverlib.h> //Comment out if using Mac OS
 #include "msp430.h"
-#include "MSP430FR5xx_6xx/driverlib.h"
+#include "MSP430FR5xx_6xx/driverlib.h" //Comment out if using Windows OS
+//#include <MSP430FR5xx_6xx\driverlib.h> //Comment out if using Mac OS
 
 //comment to push updates
 
