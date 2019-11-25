@@ -10,6 +10,15 @@
 
 #include "MSP430FR5xx_6xx/driverlib.h" //Comment out if using Windows OS
 
+/*
+ * Function Purpose: Sets up the initial state of the MSP430 by configuring
+ *                   all necessary GPIO, timers, and communication protocols
+ *
+ * Parameters: NONE
+ *
+ * Return: NONE
+ */
+void initialize();
 
 /*
  * Function Purpose: To set the pins on Port 1 (P1) as output pins
@@ -58,7 +67,7 @@ void GPIO_setOutputLowOnPin(uint8_t selectedPort, uint16_t selectedPins);
 
 /*
  * Function Purpose: To configure all necessary parameters of
- *                   Port 1 Pin 1 (P1.0) for DAC operation
+ *                   Port 1 Pin 0 (P1.0) for DAC operation
  *
  * Parameters: NONE
  *
@@ -98,7 +107,7 @@ void configurePortP1_3();
 
 /*
  * Function Purpose: To configure all necessary parameters of
- *                   Port 1 Pin 1 (P1.4) for DAC operation
+ *                   Port 1 Pin 4 (P1.4) for DAC operation
  *
  * Parameters: NONE
  *
@@ -108,7 +117,7 @@ void configurePortP1_4();
 
 /*
  * Function Purpose: To configure all necessary parameters of
- *                   Port 1 Pin 1 (P1.5) for DAC operation
+ *                   Port 1 Pin 5 (P1.5) for DAC operation
  *
  * Parameters: NONE
  *
@@ -118,7 +127,7 @@ void configurePortP1_5();
 
 /*
  * Function Purpose: To configure all necessary parameters of
- *                   Port 1 Pin 1 (P1.6) for DAC operation
+ *                   Port 1 Pin 6 (P1.6) for DAC operation
  *
  * Parameters: NONE
  *
@@ -128,12 +137,52 @@ void configurePortP1_6();
 
 /*
  * Function Purpose: To configure all necessary parameters of
- *                   Port 1 Pin 1 (P1.7) for DAC operation
+ *                   Port 1 Pin 7 (P1.7) for DAC operation
  *
  * Parameters: NONE
  *
  * Return: NONE
  */
 void configurePortP1_7();
+
+/*
+ * Function Purpose: To configure all necessary parameters of
+ *                   Port 2 Pin 0 (P2.0) for DAC operation
+ *
+ * Parameters: NONE
+ *
+ * Return: NONE
+ */
+void configurePortP2_0();
+
+/*
+ * Function Purpose: To configure all necessary parameters of
+ *                   Port 2 Pin 1 (P2.1) for DAC operation
+ *
+ * Parameters: NONE
+ *
+ * Return: NONE
+ */
+void configurePortP2_1();
+
+/*
+ * Function Purpose: To configure all necessary parameters of
+ *                   Port 2 Pin 2 (P2.2) for DAC operation
+ *
+ * Parameters: NONE
+ *
+ * Return: NONE
+ */
+void configurePortP2_2();
+
+/*
+ * Function Purpose: To configure all necessary parameters of
+ *                   Port 2 Pin 3 (P2.3) for DAC operation
+ *
+ * Parameters: NONE
+ *
+ * Return: NONE
+ */
+void configurePortP2_3();
 
 #endif /* DAC_H_ */

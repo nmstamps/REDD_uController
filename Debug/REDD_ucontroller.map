@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker Unix v18.12.3                  
 ******************************************************************************
->> Linked Thu Nov 21 21:48:30 2019
+>> Linked Mon Nov 25 18:02:06 2019
 
 OUTPUT FILE NAME:   <REDD_ucontroller.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs_mpu"  address: 00004400
