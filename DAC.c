@@ -235,4 +235,7 @@ void configurePortP2_3() {
     GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN3);
 }
 
+//Adding this as a test function to test GitHub updating
+void testFunction() {
+}
 
